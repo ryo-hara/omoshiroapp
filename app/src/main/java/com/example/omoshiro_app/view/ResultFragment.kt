@@ -32,5 +32,16 @@ class ResultFragment : Fragment() {
         binding.backButton.setOnClickListener{
             parentFragmentManager.popBackStack()
         }
+        setTestImage()
+    }
+
+    private fun setTestImage() {
+        val resourceNameBase = "result_image_"
+        val range = (1..20)
+        val randNum = range.random()
+        val resourceName = resourceNameBase + (if(randNum < 9 ) "0" else "") + randNum;
+
+        var resourceId = getResources().getIdentifier(resourceName, "drawable", context?.packageName);
+        binding.image.setImageResource(resourceId)
     }
 }

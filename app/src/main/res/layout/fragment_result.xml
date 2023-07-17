@@ -13,7 +13,7 @@
 
         <ImageView
             android:id="@+id/image"
-            android:src="@drawable/ic_launcher_background"
+            android:src="@drawable/result_image_01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="120dp"
