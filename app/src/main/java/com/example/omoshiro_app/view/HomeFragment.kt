@@ -9,6 +9,9 @@ import android.view.ViewGroup
 import com.example.omoshiro_app.viewmodel.HomeViewModel
 import com.example.omoshiro_app.databinding.HomeFragmentBinding
 import com.google.android.material.snackbar.Snackbar
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+import com.example.omoshiro_app.R
 
 class HomeFragment : Fragment() {
 
@@ -33,6 +36,15 @@ class HomeFragment : Fragment() {
 
         binding.DivinationButton.setOnClickListener{
             showSnackBar("ボタンが押されました")
+            val fragmentManager: FragmentManager = parentFragmentManager
+            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.addToBackStack(null)
+
+            fragmentTransaction.replace(
+                R.id.fragment_container_view,
+                ResultFragment.newInstance()
+            )
+            fragmentTransaction.commit()
         }
     }
 
