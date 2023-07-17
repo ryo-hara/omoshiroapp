@@ -1,12 +1,12 @@
-package com.example.omoshiro_app
+package com.example.omoshiro_app.view
 
-import android.app.Activity
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.omoshiro_app.viewmodel.HomeViewModel
 import com.example.omoshiro_app.databinding.HomeFragmentBinding
 import com.google.android.material.snackbar.Snackbar
 

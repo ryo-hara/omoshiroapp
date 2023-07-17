@@ -1,9 +1,10 @@
-package com.example.omoshiro_app
+package com.example.omoshiro_app.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
+import com.example.omoshiro_app.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
