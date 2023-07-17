@@ -1,4 +1,4 @@
-package com.example.omoshiro_app
+package com.example.omoshiro_app.viewmodel
 
 import androidx.lifecycle.ViewModel
 
