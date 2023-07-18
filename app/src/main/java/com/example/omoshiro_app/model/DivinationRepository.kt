@@ -18,7 +18,7 @@ class DivinationRepository {
         return divinationResult;
     }
 
-    fun requestData(onSuccess: () -> Unit, onFailure: () -> Unit){
+    fun requestData(onSuccess: (DivinationResult?) -> Unit, onFailure: () -> Unit){
 
         val gson = GsonBuilder()
             .setLenient()
@@ -36,7 +36,7 @@ class DivinationRepository {
                 val result: DivinationResult? = response.body()
                 Log.d("====", "=====Success" + result.toString())
                 divinationResult = result
-                onSuccess.invoke()
+                onSuccess.invoke(result)
             }
 
             override fun onFailure(call: Call<DivinationResult?>?, t: Throwable?) {
