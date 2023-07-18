@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import com.example.omoshiro_app.databinding.FragmentResultBinding
+import com.example.omoshiro_app.viewmodel.HomeViewModel
 
 class ResultFragment : Fragment() {
 
@@ -14,9 +16,15 @@ class ResultFragment : Fragment() {
     }
 
     private lateinit var binding: FragmentResultBinding
+    private lateinit var viewModel: HomeViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel = ViewModelProvider(requireActivity()).get(HomeViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -29,19 +37,22 @@ class ResultFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        initializeUI()
+    }
+
+    private fun initializeUI(){
+        binding.viewModel = viewModel
+
         binding.backButton.setOnClickListener{
             parentFragmentManager.popBackStack()
         }
-        setTestImage()
+
+        setImage()
     }
 
-    private fun setTestImage() {
-        val resourceNameBase = "result_image_"
-        val range = (1..20)
-        val randNum = range.random()
-        val resourceName = resourceNameBase + (if(randNum < 9 ) "0" else "") + randNum;
-
-        var resourceId = getResources().getIdentifier(resourceName, "drawable", context?.packageName);
+    private fun setImage() {
+        val fileId = viewModel.divinationResult.value?.file_id
+        var resourceId = getResources().getIdentifier(fileId, "drawable", context?.packageName);
         binding.image.setImageResource(resourceId)
     }
 }
