@@ -19,9 +19,7 @@ class HomeViewModel : ViewModel() {
             _divinationMainText.postValue(result?.text)
             onSuccessAction.invoke()
         },
-            onFailure = {
-                onFailureAction.invoke()
-            }
+            onFailure = onFailureAction
         )
     }
 }
