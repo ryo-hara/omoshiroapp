@@ -50,6 +50,6 @@ class DivinationRepository {
 }
 interface DivinationService {
     // MEMO: ここ直打ちはなんとかしたいよなぁ…
-    @GET("macros/s/AKfycbwywwB1q-_9o4c7dMOQUqaOh0gytVNRpl4MJ7OeENE6Y1_UsBdtH77dPvwEu6YCzXTUDA/exec")
+    @GET("macros/s/AKfycbwPxKIxXQxmrgFbrFiebcx118ek_qaQ6IO7vFcAF2OEre9-3v8rmAJ-0SVSp-RosKNXsw/exec")
     fun getResult(): Call<DivinationResult?>
 }

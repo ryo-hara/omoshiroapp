@@ -16,14 +16,14 @@ class HomeViewModel : ViewModel() {
     val cvName: LiveData<String?> = _cvName
     private val _birthDay = MutableLiveData<String?>()
     val birthDay: LiveData<String?> = _birthDay
-    private val _height = MutableLiveData<Int?>()
-    val height: LiveData<Int?> = _height
+    private val _height = MutableLiveData<String?>()
+    val height: LiveData<String?> = _height
     private val _hobby = MutableLiveData<String?>()
     val hobby: LiveData<String?> = _hobby
     private val _name = MutableLiveData<String?>()
     val name: LiveData<String?> = _name
-    private val _year = MutableLiveData<Int?>()
-    val year: LiveData<Int?> = _year
+    private val _year = MutableLiveData<String?>()
+    val year: LiveData<String?> = _year
 
 
     fun requestDivination(onSuccessAction: () -> Unit, onFailureAction: () -> Unit){
