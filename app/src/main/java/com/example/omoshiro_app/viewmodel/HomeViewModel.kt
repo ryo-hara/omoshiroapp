@@ -12,11 +12,30 @@ class HomeViewModel : ViewModel() {
     val divinationResult: LiveData<DivinationResult?> = _divinationResult
     private val _divinationMainText = MutableLiveData<String?>()
     val divinationMainText: LiveData<String?> = _divinationMainText
+    private val _cvName = MutableLiveData<String?>()
+    val cvName: LiveData<String?> = _cvName
+    private val _birthDay = MutableLiveData<String?>()
+    val birthDay: LiveData<String?> = _birthDay
+    private val _height = MutableLiveData<Int?>()
+    val height: LiveData<Int?> = _height
+    private val _hobby = MutableLiveData<String?>()
+    val hobby: LiveData<String?> = _hobby
+    private val _name = MutableLiveData<String?>()
+    val name: LiveData<String?> = _name
+    private val _year = MutableLiveData<Int?>()
+    val year: LiveData<Int?> = _year
+
 
     fun requestDivination(onSuccessAction: () -> Unit, onFailureAction: () -> Unit){
         DivinationRepository().requestData(onSuccess = { result ->
             _divinationResult.postValue(result)
             _divinationMainText.postValue(result?.text)
+            _cvName.postValue(result?.cv)
+            _birthDay.postValue(result?.birth_day)
+            _height.postValue(result?.height)
+            _hobby.postValue(result?.hobby)
+            _name.postValue(result?.name)
+            _year.postValue(result?.year)
             onSuccessAction.invoke()
         },
             onFailure = onFailureAction
