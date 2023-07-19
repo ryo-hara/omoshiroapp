@@ -1,4 +1,4 @@
-package com.example.omoshiro_app.view
+package com.example.omoshiro_app.view.fragment
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
