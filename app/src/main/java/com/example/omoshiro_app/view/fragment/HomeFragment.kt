@@ -12,6 +12,7 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.example.omoshiro_app.R
+import com.example.omoshiro_app.view.ProgressView
 
 class HomeFragment : Fragment() {
 
@@ -21,6 +22,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var binding: HomeFragmentBinding
     private lateinit var viewModel: HomeViewModel
+    private var progressView: ProgressView? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,9 +37,12 @@ class HomeFragment : Fragment() {
         viewModel = ViewModelProvider(requireActivity()).get(HomeViewModel::class.java)
 
         binding.DivinationButton.setOnClickListener{
+            createProcessView()
             viewModel.requestDivination( onSuccessAction = {
                 transactionResult()
+                deleteProgressView()
             }, onFailureAction = {
+                deleteProgressView()
                 showSnackBar("遷移に失敗しました")
             })
         }
@@ -58,4 +63,19 @@ class HomeFragment : Fragment() {
     private fun showSnackBar(text: String){
         Snackbar.make(requireActivity().findViewById(android.R.id.content), text, Snackbar.LENGTH_SHORT).show()
     }
+
+    private fun createProcessView(){
+        binding.rootConstraint .let {
+            progressView = ProgressView(requireActivity())
+            it.addView(progressView)
+            progressView?.bringToFront()
+        }
+    }
+
+    private fun deleteProgressView(){
+        if (progressView != null) {
+            binding.rootConstraint.removeView(progressView)
+        }
+    }
+
 }
