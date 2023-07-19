@@ -48,9 +48,8 @@ class DivinationRepository {
     }
 
 }
-
 interface DivinationService {
     // MEMO: ここ直打ちはなんとかしたいよなぁ…
-    @GET("macros/s/AKfycbyyr2CIr5sSvZoMoYwvGo1Af7pMiNT-kE1Tx1_m_0090uCZoivFhOU0KqL6VkjTyjCxpA/exec")
+    @GET("macros/s/AKfycbwywwB1q-_9o4c7dMOQUqaOh0gytVNRpl4MJ7OeENE6Y1_UsBdtH77dPvwEu6YCzXTUDA/exec")
     fun getResult(): Call<DivinationResult?>
 }
