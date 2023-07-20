@@ -60,14 +60,16 @@ class HomeFragment : Fragment() {
 
     private fun transactionResult() {
         val fragmentManager: FragmentManager = parentFragmentManager
-        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.addToBackStack(null)
-
-        fragmentTransaction.replace(
-            R.id.fragment_container_view,
-            ResultFragment.newInstance()
-        )
-        fragmentTransaction.commit()
+        fragmentManager.beginTransaction().addToBackStack(null)
+            .setCustomAnimations(
+                R.anim.slide_in,
+                R.anim.fade_out,
+                R.anim.fade_in,
+                R.anim.slide_out)
+            .replace(
+                R.id.fragment_container_view,
+                ResultFragment.newInstance())
+            .commit()
     }
 
     private fun showSnackBar(text: String){
