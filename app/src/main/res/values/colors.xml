@@ -13,4 +13,8 @@
     <color name="light_blue_600">#FF039BE5</color>
     <color name="gray_400">#FFBDBDBD</color>
     <color name="gray_600">#FF757575</color>
+    <color name="blue_archive_blue">#FF00D7FB</color>
+    <color name="blue_archive_white">#FFFFFFFF</color>
+    <color name="blue_archive_gray">#FF304A60</color>
+    <color name="blue_archive_light_blue">#FFF2F9FB</color>
 </resources>

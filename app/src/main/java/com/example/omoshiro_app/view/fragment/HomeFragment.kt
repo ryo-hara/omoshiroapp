@@ -2,6 +2,7 @@ package com.example.omoshiro_app.view.fragment
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -35,6 +36,15 @@ class HomeFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(requireActivity()).get(HomeViewModel::class.java)
+        initUI()
+    }
+
+    private fun initUI() {
+
+        binding.let {
+            it.blueArchiveLink.movementMethod = LinkMovementMethod.getInstance()
+            it.githubLink.movementMethod = LinkMovementMethod.getInstance()
+        }
 
         binding.DivinationButton.setOnClickListener{
             createProcessView()
