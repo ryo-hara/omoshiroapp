@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">2023占いプログラム</string>
+    <string name="git_hub_link"><a href="https://github.com/ryo-hara/omoshiroapp">GitHub</a></string>
+    <string name="blue_archive_link"><a href="https://bluearchive.jp/">ブルアカとは</a></string>
+    <string name="home_main_title">ブルアカ占い</string>
+
 </resources>
