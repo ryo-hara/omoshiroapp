@@ -1,3 +1,15 @@
+# 基本情報
+## 対応OSバージョン
+- Android 11.0 (API Level 30)以上
+
+## 開発環境
+- Android Studio 2020.3.1
+
+## 使用しているライブラリ
+- [gson](https://github.com/google/gson)
+- [Retrofit](https://square.github.io/retrofit/)
+
+# アプリの説明
 ## アプリの流れ
 ![app_flow](/document_images/app_flow.jpg)
 
