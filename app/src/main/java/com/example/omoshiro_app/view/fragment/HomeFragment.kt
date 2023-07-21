@@ -14,6 +14,9 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.example.omoshiro_app.R
 import com.example.omoshiro_app.view.ProgressView
+import android.content.Intent
+import android.net.Uri
+
 
 class HomeFragment : Fragment() {
 
@@ -39,11 +42,15 @@ class HomeFragment : Fragment() {
         initUI()
     }
 
-    private fun initUI() {
 
+    private fun initUI() {
         binding.let {
-            it.blueArchiveLink.movementMethod = LinkMovementMethod.getInstance()
-            it.githubLink.movementMethod = LinkMovementMethod.getInstance()
+            it.githubChip.setOnClickListener{
+                openLink(getString(R.string.git_hub_link))
+            }
+            it.blueArchiveChip.setOnClickListener{
+                openLink(getString(R.string.blue_archive_link))
+            }
         }
 
         binding.DivinationButton.setOnClickListener{
@@ -56,6 +63,12 @@ class HomeFragment : Fragment() {
                 showSnackBar("遷移に失敗しました")
             })
         }
+    }
+
+    private fun openLink(link: String) {
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(link)
+        startActivity(intent)
     }
 
     private fun transactionResult() {
