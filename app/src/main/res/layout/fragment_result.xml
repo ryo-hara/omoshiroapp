@@ -9,14 +9,19 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/root_constraint"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/root_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/blue_archive_blue"
-        android:clickable="true"
-        tools:context=".view.MainActivity">
+        android:clickable="true">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/top_name_card_view"
@@ -320,5 +325,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             />
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/black_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            android:clickable="true"
+            android:background="@color/black"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
