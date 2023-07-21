@@ -11,7 +11,7 @@
         android:id="@+id/root_constraint"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/gray_600"
+        android:background="@color/white"
         android:clickable="true"
         tools:context=".view.MainActivity">
 
@@ -19,76 +19,124 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/image"
-                android:src="@drawable/bluearchive_logo"
-                android:layout_width="wrap_content"
-                android:layout_height="240dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                />
-
-            <TextView
-                android:id="@+id/informal_text_title"
-                android:layout_width="wrap_content"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2023年非公式\n占いプログラム"
-                android:textColor="@color/blue_archive_gray"
-                android:textSize="48dp"
-                android:layout_marginTop="64dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="12dp"
+                app:cardElevation="12dp"
+                app:cardCornerRadius="0dp"
                 app:layout_constraintTop_toTopOf="parent"
-                />
-
-            <TextView
-                android:id="@+id/main_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/home_main_title"
-                android:textSize="64dp"
-                android:layout_marginTop="96dp"
-                android:textColor="@color/blue_archive_blue"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/informal_text_title"
-                />
+                >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:paddingBottom="24dp"
+                    >
+
+                <TextView
+                    android:id="@+id/informal_text_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2023年非公式\n占いプログラム"
+                    android:textColor="@color/blue_archive_gray"
+                    android:textSize="42dp"
+                    android:layout_marginTop="32dp"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/home_fragment_logo_view_shape"
+                    app:layout_constraintCircleRadius="50dp"
+                    app:layout_constraintTop_toBottomOf="@id/informal_text_title"
+                    >
+
+                    <ImageView
+                    android:id="@+id/image"
+                    android:src="@drawable/bluearchive_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="240dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="32dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/main_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_main_title"
+                    android:textSize="64dp"
+                    android:layout_marginTop="96dp"
+                    android:textColor="@color/blue_archive_blue"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="128dp"
+                android:layout_marginTop="24dp"
+                android:paddingBottom="24dp"
                 android:gravity="center"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/main_title">
-                <TextView
-                    android:id="@+id/github_link"
+                app:layout_constraintTop_toBottomOf="@id/card_view">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/github_chip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
-                    android:text="@string/git_hub_link"
+                    android:text="@string/git_hub_link_text"
                     android:clickable="true"
                     android:textSize="24dp"
-                    android:textColor="@color/black"
+                    android:elevation="4dp"
+                    android:textColor="@color/white"
+                    app:chipSurfaceColor="@color/black"
+                    app:chipIcon="@drawable/ic_github_mark_white"
+                    app:chipIconTint="@color/white"
                     />
 
-                <TextView
-                    android:id="@+id/blue_archive_link"
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/blue_archive_chip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
-                    android:text="@string/blue_archive_link"
+                    android:text="@string/blue_archive_link_text"
                     android:clickable="true"
                     android:textSize="24dp"
-                    android:textColor="@color/black"
+                    android:elevation="4dp"
+                    android:textColor="@color/blue_archive_blue"
+                    app:chipSurfaceColor="@color/white"
+                    app:chipIcon="@drawable/ic_baseline_insert_link_24"
+                    app:chipIconTint="@color/blue_archive_blue"
                     />
+
             </LinearLayout>
 
             <Button
