@@ -5,9 +5,12 @@
       <map>
         <entry key="..\:/Develop/omoshiro_app/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.22395833333333334" />
         <entry key="..\:/Develop/omoshiro_app/app/src/main/res/drawable/home_fragment_logo_view_shape.xml" value="0.22395833333333334" />
+        <entry key="..\:/Develop/omoshiro_app/app/src/main/res/drawable/ic_baseline_insert_link_24.xml" value="0.22395833333333334" />
         <entry key="..\:/Develop/omoshiro_app/app/src/main/res/drawable/ic_github_mark_white.xml" value="0.21875" />
         <entry key="..\:/Develop/omoshiro_app/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22395833333333334" />
         <entry key="..\:/Develop/omoshiro_app/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.22395833333333334" />
+        <entry key="..\:/Develop/omoshiro_app/app/src/main/res/drawable/result_image_shape.xml" value="0.22395833333333334" />
+        <entry key="..\:/Develop/omoshiro_app/app/src/main/res/drawable/result_text_card_shape.xml" value="0.22395833333333334" />
         <entry key="..\:/Develop/omoshiro_app/app/src/main/res/layout/activity_main.xml" value="0.20260416666666667" />
         <entry key="..\:/Develop/omoshiro_app/app/src/main/res/layout/activity_splash.xml" value="0.19375" />
         <entry key="..\:/Develop/omoshiro_app/app/src/main/res/layout/fragment_result.xml" value="0.2078125" />
