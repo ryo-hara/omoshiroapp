@@ -20,7 +20,6 @@
             android:layout_height="match_parent">
 
             <ImageView
-
                 android:id="@+id/image"
                 android:src="@drawable/bluearchive_logo"
                 android:layout_width="wrap_content"
