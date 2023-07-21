@@ -9,6 +9,9 @@
 - [gson](https://github.com/google/gson)
 - [Retrofit](https://square.github.io/retrofit/)
 
+## Jsonで帰ってくるデータ一覧
+- [GoogleSpreadSheet](https://docs.google.com/spreadsheets/d/1ltRZexrOy87OVzDqzdRdR3r5o9mkHCtdKZ48lnO-GOA/edit?usp=sharing)
+
 # アプリの説明
 ## アプリの流れ
 ![app_flow](/document_images/app_flow.jpg)
