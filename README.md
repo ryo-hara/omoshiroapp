@@ -1,3 +1,6 @@
+# アプリの配布場所
+- [GoogleDrive](https://drive.google.com/file/d/1ctL4602-vYEVbXCrtCYJ21qI48LwgNFC/view?usp=sharing)
+
 # 基本情報
 ## 対応OSバージョン
 - Android 11.0 (API Level 30)以上
