@@ -1,10 +1,12 @@
 package com.example.omoshiro_app.viewmodel
 
+import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.omoshiro_app.model.DivinationRepository
 import com.example.omoshiro_app.model.DivinationResult
+import com.example.omoshiro_app.model.SoundRepository
 
 class HomeViewModel : ViewModel() {
 
@@ -25,7 +27,6 @@ class HomeViewModel : ViewModel() {
     private val _year = MutableLiveData<String?>()
     val year: LiveData<String?> = _year
 
-
     fun requestDivination(onSuccessAction: () -> Unit, onFailureAction: () -> Unit){
         DivinationRepository().requestData(onSuccess = { result ->
             _divinationResult.postValue(result)
@@ -40,5 +41,9 @@ class HomeViewModel : ViewModel() {
         },
             onFailure = onFailureAction
         )
+    }
+
+    fun playSE(context: Context, id: Int){
+        SoundRepository().playSE(context, id)
     }
 }

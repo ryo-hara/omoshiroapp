@@ -22,9 +22,6 @@ class ResultFragment : Fragment() {
         fun newInstance() = ResultFragment()
     }
 
-    private lateinit var soundPool: SoundPool
-    private var sound = 0
-
     private lateinit var binding: FragmentResultBinding
     private lateinit var viewModel: HomeViewModel
 
@@ -40,7 +37,7 @@ class ResultFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentResultBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
@@ -57,7 +54,7 @@ class ResultFragment : Fragment() {
             parentFragmentManager.popBackStack()
         }
 
-        playSE()
+        viewModel.playSE(requireActivity(), R.raw.drum_roll)
 
         binding.blackView.let {
             it.visibility = View.VISIBLE
@@ -69,27 +66,9 @@ class ResultFragment : Fragment() {
         setImage()
     }
 
-    private fun playSE(){
-        val audioAttributes = AudioAttributes.Builder()
-            .setUsage(AudioAttributes.USAGE_GAME)
-            .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
-            .build()
-
-        soundPool = SoundPool.Builder()
-            .setAudioAttributes(audioAttributes)
-            .setMaxStreams(1)
-            .build()
-
-        sound = soundPool.load(requireActivity(), R.raw.drum_roll, 1)
-        soundPool.setOnLoadCompleteListener{ soundPool, sampleId, status ->
-            soundPool.play(sound, 1.0f, 1.0f, 0, 0, 1.0f)
-        }
-
-    }
-
     private fun setImage() {
         val fileId = viewModel.divinationResult.value?.file_id
-        var resourceId = getResources().getIdentifier(fileId, "drawable", context?.packageName);
+        val resourceId = getResources().getIdentifier(fileId, "drawable", context?.packageName);
         binding.image.setImageResource(resourceId)
     }
 }
