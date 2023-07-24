@@ -8,3 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Android CI Build"
+      - name: checkout
+        uses: actions/checkout@v2
