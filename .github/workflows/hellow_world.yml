@@ -6,8 +6,8 @@ on:
 
 
 jobs:
-  sya_hello:
-  runs-ob: ubuntu-latest
+  say_hello:
+  runs-on: ubuntu-latest
   steps:
     - run: echo "Hello World"
     - run: pwd
