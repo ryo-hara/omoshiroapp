@@ -1,0 +1,13 @@
+name: Hello World
+
+
+on: 
+  workflow_dispatch:
+
+
+jobs:
+  sya_hello:
+  runs-ob: ubuntu-latest
+  steps:
+    - run: echo "Hello World"
+    - run: pwd
