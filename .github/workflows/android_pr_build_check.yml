@@ -1,7 +1,9 @@
-name: Android CI Build
+name: Android PR Build Check
 
 on: 
-  workflow_dispatch:
+  pull_request:
+    branches:
+      - 'develop'
 
 jobs:
   build:
