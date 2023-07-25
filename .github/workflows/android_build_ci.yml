@@ -18,5 +18,9 @@ jobs:
           distribution: 'zulu'
           java-version: '11'
 
+      # そのまま実行すると./gradlew: Permission deniedが出るので権限を付与する
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
       - name: Run Compile
         run: ./gradlew assembleDebug
