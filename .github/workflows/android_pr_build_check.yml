@@ -5,9 +5,9 @@ on:
     branches:
       - 'develop'
     paths:
-      - '***.kt'
-      - '***.xml'
-      - '***.gradle'
+      - '**.kt'
+      - '**.xml'
+      - '**.gradle'
 
 jobs:
   build:
