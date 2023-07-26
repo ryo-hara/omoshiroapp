@@ -1,0 +1,26 @@
+name: Android Lint
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Android Lint"
+
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: '11'
+
+      # そのまま実行すると./gradlew: Permission deniedが出るので権限を付与する
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: Run Compile
+        run: ./gradlew lint
