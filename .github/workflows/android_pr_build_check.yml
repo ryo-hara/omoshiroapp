@@ -4,6 +4,10 @@ on:
   pull_request:
     branches:
       - 'develop'
+    paths:
+      - '***.kt'
+      - '***.xml'
+      - '***.gradle'
 
 jobs:
   build:
